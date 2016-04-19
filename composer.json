@@ -1,0 +1,18 @@
+{
+    "name": "jguyomard/tests-ci",
+    "require": {
+        "silex/silex": "2.0.x-dev",
+        "jguyomard/silex-capsule-eloquent": "2.0.x-dev"
+    },
+    "autoload": {
+	"psr-4": {
+            "Foo\\Bar\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julien"
+        }
+    ]
+}
