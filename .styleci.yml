@@ -1,0 +1,8 @@
+preset: psr2
+
+linting: true
+
+enabled:
+  - concat_without_spaces
+  - cast_spaces
+  - unalign_double_arrow
