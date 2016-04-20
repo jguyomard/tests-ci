@@ -1,0 +1,15 @@
+before_script:
+  - curl --remote-name http://get.sensiolabs.org/php-cs-fixer.phar
+  - ls
+  - php -v
+  - php php-cs-fixer.phar -V
+
+php56:
+  image: php:5.6-cli
+  script:
+    - php php-cs-fixer.phar fix . -vvv --diff
+
+php70:
+  image: php:7.0-cli
+  script:   
+    - php php-cs-fixer.phar fix . -vvv --diff
