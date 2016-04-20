@@ -12,7 +12,7 @@ cache:
 
 before_script:
   - curl --remote-name http://get.sensiolabs.org/php-cs-fixer.phar
-  - git clone https://github.com/novius-os/core.git 2a1f532 --depth 1
+  - git clone https://github.com/novius-os/core.git -b 2a1f532 --depth 1
   - pwd
   - ls -la
   - php -v
