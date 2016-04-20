@@ -9,4 +9,4 @@ before_script:
 php70:
   image: php:7.0-cli
   script:   
-    - php php-cs-fixer.phar fix core/ -vvv --diff
+    - php php-cs-fixer.phar fix core/ -vvv --diff --config-file ./.php_cs
