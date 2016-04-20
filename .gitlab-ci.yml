@@ -1,8 +1,9 @@
 before_script:
   - curl --remote-name http://get.sensiolabs.org/php-cs-fixer.phar
-  - apt-get update && apt-get install git -yqq
-  - git clone https://github.com/novius-os/core.git
-  - ls
+  - apt-get update qq
+  - apt-get install git -yqq
+  - git clone https://github.com/novius-os/core.git --depth 1
+  - ls -la
   - php -v
   - php php-cs-fixer.phar -V
 
