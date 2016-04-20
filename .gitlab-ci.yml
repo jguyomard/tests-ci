@@ -1,7 +1,7 @@
 before_script:
   - curl --remote-name http://get.sensiolabs.org/php-cs-fixer.phar
   - apt-get update -qq
-  - apt-get install git -yqq
+  - apt-get install -yqq git
   - git clone https://github.com/novius-os/core.git --depth 1
   - ls -la
   - php -v
@@ -10,4 +10,4 @@ before_script:
 php70:
   image: php:7.0-cli
   script:   
-    - php php-cs-fixer.phar fix core/ -vvv --diff --config-file ./.php_cs
+    - php php-cs-fixer.phar fix core/ -vv --diff --config-file ./.php_cs
