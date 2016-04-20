@@ -19,4 +19,4 @@ before_script:
   - php php-cs-fixer.phar -V
 
 script: 
-  - php php-cs-fixer.phar fix core/ -vv --diff --config-file ./.php_cs
+  - php php-cs-fixer.phar fix ./core -vv --diff --config-file ./.php_cs
