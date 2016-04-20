@@ -14,6 +14,7 @@ $fixers = [
     '-braces',
     'concat_without_spaces',
     'spaces_cast',
+    'new_with_braces',
 ];
 
 $finder = Symfony\CS\Finder\DefaultFinder::create()
