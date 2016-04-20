@@ -9,6 +9,9 @@ $excludes = [
 ];
 
 $fixers = [
+    '-psr0',
+    '-psr4',
+    '-braces',
     'concat_without_spaces',
     'spaces_cast',
     'unalign_double_arrow',
