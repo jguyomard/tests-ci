@@ -1,0 +1,16 @@
+before_script:                                                                                                                                                                                                                               
+  - date
+  - ls -la
+  - pwd
+  - printenv
+
+php56:
+  image: php:5.6-cli
+  script:
+    - php -v
+
+php70:
+  image: php:7.0-cli
+  script:   
+    - php -v
+
