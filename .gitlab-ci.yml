@@ -2,6 +2,7 @@ before_script:
   - date
   - ls -la
   - pwd
+  - id
   - printenv
 
 php56:
