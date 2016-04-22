@@ -1,0 +1,17 @@
+machine:
+  php:
+    version: 7.0.3
+
+dependencies:
+  override:
+    - date
+    - ls -la
+    - pwd
+    - id
+    - printenv
+    - composer --version
+
+test:
+  override:
+    - php -v
+
