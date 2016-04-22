@@ -2,17 +2,17 @@
 
 class HelloWorldTest extends PHPUnit_Framework_TestCase
 {
-	protected $badCode;
+    protected $badCode;
 
-	public function testPlop()
-	{
-		$ret = $this->badCode->badIndentation();
-		$this->assertNull($ret);
-	}
+    public function testPlop()
+    {
+        $ret = $this->badCode->badIndentation();
+        $this->assertNull($ret);
+    }
 
-	// SetUp at the end
-	public function setUp()
-    	{
-		$this->badCode = new \Foo\Bar\BadCode;
-	}
+    // SetUp at the end
+    public function setUp()
+    {
+        $this->badCode = new \Foo\Bar\BadCode;
+    }
 }
