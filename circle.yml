@@ -4,6 +4,8 @@ machine:
 
 dependencies:
   override:
+    - uname -a
+    - lsb_release -a
     - date
     - ls -la
     - pwd
