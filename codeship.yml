@@ -1,0 +1,12 @@
+# codeship doesnt support yml config yet
+# We use https://pypi.python.org/pypi/codeship-yaml
+
+
+before_script:
+  - curl -L -O http://get.sensiolabs.org/php-cs-fixer.phar
+  - composer install
+  - php -v
+  - php php-cs-fixer.phar -V
+
+script: 
+  - php php-cs-fixer.phar fix . -vv --diff --config-file ./.php_cs
