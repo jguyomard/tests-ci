@@ -1,0 +1,14 @@
+machine:
+  php:
+    version: 5.5.11
+
+dependencies:
+  override:
+    - ls -l
+    - curl -O http://get.sensiolabs.org/php-cs-fixer.phar
+    - composer install
+
+test:
+  override:
+    - php php-cs-fixer.phar -V
+    - php php-cs-fixer.phar fix . --dry-run --diff -vvv
