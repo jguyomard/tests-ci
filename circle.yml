@@ -4,6 +4,8 @@ machine:
     version: 7.0.3
 
 dependencies:
+  cache_directories:
+    - ~/.composer/cache
   override:
     - ls -l
     - curl -O http://get.sensiolabs.org/php-cs-fixer.phar
