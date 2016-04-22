@@ -1,0 +1,12 @@
+build:
+  image: php
+  commands:
+    - uname -a
+    - lsb_release -a
+    - date
+    - ls -la
+    - pwd
+    - id
+    - printenv
+    - composer --version
+    - php -v
