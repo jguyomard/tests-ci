@@ -1,0 +1,21 @@
+# codeship doesnt support yml config
+# We use https://pypi.python.org/pypi/codeship-yaml
+
+install:
+  - echo "Hi!"
+
+before_script:
+  - uname -a
+  - lsb_release -a
+  - date
+  - ls -la
+  - pwd
+  - id
+  - printenv
+  - composer --version
+
+script:
+  - php -v
+
+after_success:
+  - echo "YEAH"
