@@ -1,21 +1,22 @@
 language: php
 
 php:
-  - 5.6
   - 7.0
-  - hhvm
 
 sudo: false
+
+env:
+  - PHPCSFIXER_PATH=$HOME/phar/php-cs-fixer.phar
 
 cache:
     directories:
       - $HOME/.composer/cache
+      - $HOME/phar/
 
 before_script:
   - composer install
-  - curl -O http://get.sensiolabs.org/php-cs-fixer.phar
+  - '[ ! -f $PHPCSFIXER_PATH ] && mkdir -p `dirname $PHPCSFIXER_PATH` && curl -o $PHPCSFIXER_PATH http://get.sensiolabs.org/php-cs-fixer.phar'
+  - php $PHPCSFIXER_PATH -V
 
 script: 
-  - php php-cs-fixer.phar -V
-  - php php-cs-fixer.phar fix . --dry-run --diff -vvv
-
+  - php $PHPCSFIXER_PATH fix ./core -vv --diff --config-file ./.php_cs
