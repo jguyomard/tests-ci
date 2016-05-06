@@ -15,7 +15,7 @@ cache:
 
 before_script:
   - composer install
-  - [ ! -f $PHPCSFIXER_PATH ] && mkdir -p `dirname $PHPCSFIXER_PATH` && curl -o $PHPCSFIXER_PATH http://get.sensiolabs.org/php-cs-fixer.phar
+  - 'if [ ! -f $PHPCSFIXER_PATH ]; then mkdir -p `dirname $PHPCSFIXER_PATH` && curl -o $PHPCSFIXER_PATH http://get.sensiolabs.org/php-cs-fixer.phar; fi'
   - php $PHPCSFIXER_PATH -V
 
 script: 
