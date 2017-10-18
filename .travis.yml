@@ -1,21 +1,18 @@
-language: php
+language: go
 
-php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
-  - nightly
+go:
+  - 1.7
 
-sudo: false
+sudo: required
 
-before_script:                                                                                                                                                                                                                               
-  - date
-  - ls -la
-  - pwd
-  - id
-  - printenv
+before_install:
+  - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.6/elasticsearch-2.4.6.deb
+  - sudo dpkg -i --force-confnew elasticsearch-2.4.6.deb
+  - sudo service elasticsearch start
+  - until curl --silent -XGET --fail http://localhost:9200; do printf '.'; sleep 1; done
 
-script: 
-  - php -v
+install:
+  - echo "bypass default install"
+  
+script:
+  - echo OK
