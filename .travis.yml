@@ -3,12 +3,16 @@ language: go
 go:
   - 1.7
 
-sudo: required
+sudo: false
+
+env:
+  global:
+    -  ES_VERSION=2.4.6
 
 before_install:
-  - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.6/elasticsearch-2.4.6.deb
-  - sudo dpkg -i --force-confnew elasticsearch-2.4.6.deb
-  - sudo service elasticsearch start
+  - curl -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/{$ES_VERSION}/elasticsearch-{$ES_VERSION}.tar.gz
+  - tar -xzf elasticsearch-${ES_VERSION}.tar.gz
+  - ./elasticsearch-${ES_VERSION}/bin/elasticsearch &
   - until curl --silent -XGET --fail http://localhost:9200; do printf '.'; sleep 1; done
 
 install:
