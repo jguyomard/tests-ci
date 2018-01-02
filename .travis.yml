@@ -2,20 +2,14 @@ language: php
 
 php:
   - 5.4
-  - 5.5
   - 5.6
   - 7.0
-  - hhvm
-  - nightly
-
-sudo: false
 
 before_script:                                                                                                                                                                                                                               
   - date
   - ls -la
-  - pwd
-  - id
-  - printenv
+  - sudo sh -c 'echo "127.0.0.1 novius-os" >> /etc/hosts'
+  - cat /etc/hosts
 
 script: 
-  - php -v
+  - ping -c 3 127.0.0.1
