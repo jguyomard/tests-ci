@@ -14,4 +14,4 @@ before_script:
 
 script: 
   - phantomjs --version
-  - /usr/local/phantomjs-1.9.8/bin/phantomjs --version
+  - /usr/local/phantomjs-1.9.8/phantomjs --version
