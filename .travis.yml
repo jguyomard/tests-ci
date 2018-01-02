@@ -9,6 +9,7 @@ php:
 before_script:                                                                                                                                                                                                                               
   - date
   - ls -la /usr/local/
+  - which phantomjs
 
 script: 
   - phantomjs --version
