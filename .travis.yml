@@ -10,6 +10,8 @@ before_script:
   - date
   - ls -la /usr/local/
   - which phantomjs
+  - ls -laR /usr/local/phantomjs-1.9.8/
 
 script: 
   - phantomjs --version
+  - /usr/local/phantomjs-1.9.8/bin/phantomjs --version
